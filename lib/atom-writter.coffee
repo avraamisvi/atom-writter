@@ -5,6 +5,7 @@ module.exports = AtomWritter =
   atomWritterView: null
   modalPanel: null
   subscriptions: null
+  modalGeneratorPanel: null
 
   activate: (state) ->
     @atomWritterView = new AtomWritterView(state.atomWritterViewState)
@@ -26,6 +27,14 @@ module.exports = AtomWritter =
 
   toggle: ->
     console.log 'AtomWritter was toggled!'
+
+    if @modalPanel.isVisible()
+      @modalPanel.hide()
+    else
+      @modalPanel.show()
+
+  generate: ->
+    console.log 'AtomWritter was generating!'
 
     if @modalPanel.isVisible()
       @modalPanel.hide()

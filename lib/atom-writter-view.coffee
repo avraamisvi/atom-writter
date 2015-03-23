@@ -7,7 +7,7 @@ class AtomWritterView
 
     # Create message element
     message = document.createElement('div')
-    message.textContent = "The AtomWritter package is Alive! It's ALIVE!"
+    message.textContent = "Abacaxi eh dificil de cortar."
     message.classList.add('message')
     @element.appendChild(message)
 

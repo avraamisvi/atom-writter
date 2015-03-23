@@ -13,7 +13,7 @@
       'label': 'atom-writter'
       'submenu': [
         {
-          'label': 'Toggle'
+          'label': 'Generate Project'
           'command': 'atom-writter:toggle'
         }
       ]
