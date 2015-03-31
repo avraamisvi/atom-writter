@@ -8,13 +8,16 @@ module.exports = AtomWritter =
   modalGeneratorPanel: null
 
   activate: (state) ->
+
     @atomWritterView = new AtomWritterView(state.atomWritterViewState)
+    @atomWritterView.generateView()
+
     @modalPanel = atom.workspace.addModalPanel(item: @atomWritterView.getElement(), visible: false)
 
-    # Events subscribed to in atom's system can be easily cleaned up with a CompositeDisposable
+      # Events subscribed to in atom's system can be easily cleaned up with a CompositeDisposable
     @subscriptions = new CompositeDisposable
 
-    # Register command that toggles this view
+      # Register command that toggles this view
     @subscriptions.add atom.commands.add 'atom-workspace', 'atom-writter:toggle': => @toggle()
 
   deactivate: ->
@@ -27,6 +30,7 @@ module.exports = AtomWritter =
 
   toggle: ->
     console.log 'AtomWritter was toggled!'
+    console.log @modalPanel
 
     if @modalPanel.isVisible()
       @modalPanel.hide()

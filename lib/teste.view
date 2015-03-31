@@ -1,0 +1,17 @@
+<atom-panel class='top'>
+    <div class='padded'>
+        <div class='inset-panel'>
+            <div class='panel-heading'>An inset-panel heading</div>
+            <div class='panel-body padded'>
+              aslkdjaskldj]sad
+              sasadsada asdadsadsa
+              aslkdjaskldj]sad
+              sasadsada asdadsadsa
+              aslkdjaskldj]sad
+              sasadsada asdadsadsa
+              aslkdjaskldj]sad
+              sasadsada asdadsadsa
+            </div>
+        </div>
+    </div>
+</atom-panel>
