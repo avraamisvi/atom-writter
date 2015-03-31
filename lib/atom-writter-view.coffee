@@ -1,6 +1,4 @@
-Mustache = require './mustache'
-fs = require 'fs-plus'
-path = require 'path'
+ViewParser = require './view-parser'
 
 module.exports =
 class AtomWritterView
@@ -21,17 +19,6 @@ class AtomWritterView
     @element
 
   generateView: ->
-    stats = fs.statSync @fileName
-    fd = fs.openSync @fileName, "r"
-    buffer = new Buffer stats.size
-
-    fs.readSync fd, buffer, 0, buffer.length, null
-    data = buffer.toString "utf8", 0, buffer.length
-    console.log(data);
-
-    Mustache.parse(data);
-    @element = document.createElement('div')
-    @element.innerHTML = Mustache.render(data)
-
-    console.log(@element)
-    fs.closeSync(fd);
+    view =  new ViewParser document.createElement('div'), "create-project-modal.view"
+    view.generateView({texto:"ola mundo"})
+    @element = view.getElement()

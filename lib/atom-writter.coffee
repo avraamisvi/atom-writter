@@ -29,17 +29,12 @@ module.exports = AtomWritter =
     atomWritterViewState: @atomWritterView.serialize()
 
   toggle: ->
-    console.log 'AtomWritter was toggled!'
-    console.log @modalPanel
-
     if @modalPanel.isVisible()
       @modalPanel.hide()
     else
       @modalPanel.show()
 
   generate: ->
-    console.log 'AtomWritter was generating!'
-
     if @modalPanel.isVisible()
       @modalPanel.hide()
     else
