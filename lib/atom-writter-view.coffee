@@ -20,5 +20,11 @@ class AtomWritterView
 
   generateView: ->
     view =  new ViewParser document.createElement('div'), "create-project-modal.view"
-    view.generateView({texto:"ola mundo"})
+    view.generateView({})
     @element = view.getElement()
+
+    @element.querySelector("#cancelButton").onclick = (eve)=>
+      alert "ola"
+
+    @element.querySelector("#createButton").onclick = (eve)=>
+      alert "ola"
