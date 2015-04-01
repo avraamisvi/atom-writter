@@ -1,5 +1,6 @@
 AtomWritterView = require './atom-writter-view'
 {CompositeDisposable} = require 'atom'
+ProjectGenerator = require './project-generator'
 
 module.exports = AtomWritter =
   atomWritterView: null
@@ -19,6 +20,7 @@ module.exports = AtomWritter =
 
       # Register command that toggles this view
     @subscriptions.add atom.commands.add 'atom-workspace', 'atom-writter:toggle': => @toggle()
+    @subscriptions.add atom.commands.add 'atom-workspace', 'atom-writter:create-project': => @generate()
 
   deactivate: ->
     @modalPanel.destroy()
@@ -35,7 +37,9 @@ module.exports = AtomWritter =
       @modalPanel.show()
 
   generate: ->
-    if @modalPanel.isVisible()
-      @modalPanel.hide()
-    else
-      @modalPanel.show()
+    element = @modalPanel.getItem()
+    name = element.querySelector("#projectNameField").textContent
+    #console.log name
+    generator = new ProjectGenerator name, name, name
+    generator.generate()
+    @modalPanel.hide()

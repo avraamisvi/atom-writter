@@ -1,11 +1,11 @@
 <atom-panel class='top'>
     <div class='padded'>
         <div class='inset-panel'>
-            <div class='panel-heading'>An inset-panel heading</div>
+            <div class='panel-heading'>Creating a new project</div>
             <div class='panel-body padded'>
 
               <label for="projectNameField">Project Name:</label>
-              <atom-text-editor mini id="projectNameField">User input</atom-text-editor>
+              <atom-text-editor mini id="projectNameField">My new book</atom-text-editor>
 
               <div class='block'>
                   <button class='inline-block btn' id="cancelButton">Cancel</button>

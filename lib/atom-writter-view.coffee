@@ -24,7 +24,7 @@ class AtomWritterView
     @element = view.getElement()
 
     @element.querySelector("#cancelButton").onclick = (eve)=>
-      alert "ola"
+      atom.commands.dispatch @element, "atom-writter:toggle"
 
     @element.querySelector("#createButton").onclick = (eve)=>
-      alert "ola"
+      atom.commands.dispatch @element, "atom-writter:create-project"
